@@ -1,0 +1,16 @@
+<section class="encabezado-pagina">
+  <div>
+    <p class="ceja">Reserva #<%= reserva.id %></p>
+    <h1><%= reserva.sala %></h1>
+  </div>
+  <a class="boton boton-secundario" href="/reservas">Volver a reservas</a>
+</section>
+
+<dl class="detalle-reserva">
+  <div><dt>Estudiante</dt><dd><%= reserva.estudiante %></dd></div>
+  <div><dt>Email</dt><dd><%= reserva.email %></dd></div>
+  <div><dt>Sala</dt><dd><%= reserva.sala %></dd></div>
+  <div><dt>Fecha</dt><dd><%= reserva.fecha %></dd></div>
+  <div><dt>Turno</dt><dd><%= reserva.turno %></dd></div>
+  <div><dt>Personas</dt><dd><%= reserva.personas %></dd></div>
+</dl>

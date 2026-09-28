@@ -1,0 +1,57 @@
+<section class="encabezado-pagina">
+  <div>
+    <p class="ceja"><%= seccion %></p>
+    <h1>Solicitar una sala</h1>
+  </div>
+</section>
+
+<% if (error) { %>
+  <p class="alerta" role="alert"><%= error %></p>
+<% } %>
+
+<form class="formulario" action="/reservas" method="post">
+  <div class="campo">
+    <label for="estudiante">Nombre del estudiante</label>
+    <input id="estudiante" name="estudiante" type="text" autocomplete="name" value="<%= valores.estudiante || '' %>" required>
+  </div>
+
+  <div class="campo">
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" value="<%= valores.email || '' %>" required>
+  </div>
+
+  <div class="campo">
+    <label for="sala">Sala</label>
+    <select id="sala" name="sala" required>
+      <option value="">Selecciona una sala</option>
+      <option value="Sala Norte" <%= valores.sala === 'Sala Norte' ? 'selected' : '' %>>Sala Norte</option>
+      <option value="Sala Sur" <%= valores.sala === 'Sala Sur' ? 'selected' : '' %>>Sala Sur</option>
+      <option value="Sala Multimedia" <%= valores.sala === 'Sala Multimedia' ? 'selected' : '' %>>Sala Multimedia</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="fecha">Fecha</label>
+    <input id="fecha" name="fecha" type="date" value="<%= valores.fecha || '' %>" required>
+  </div>
+
+  <div class="campo">
+    <label for="turno">Turno</label>
+    <select id="turno" name="turno" required>
+      <option value="">Selecciona un turno</option>
+      <option value="Mañana" <%= valores.turno === 'Mañana' ? 'selected' : '' %>>Mañana</option>
+      <option value="Tarde" <%= valores.turno === 'Tarde' ? 'selected' : '' %>>Tarde</option>
+      <option value="Noche" <%= valores.turno === 'Noche' ? 'selected' : '' %>>Noche</option>
+    </select>
+  </div>
+
+  <div class="campo">
+    <label for="personas">Cantidad de personas</label>
+    <input id="personas" name="personas" type="number" min="1" max="6" step="1" value="<%= valores.personas || '' %>" required>
+  </div>
+
+  <div class="acciones">
+    <button class="boton" type="submit">Confirmar reserva</button>
+    <a class="enlace" href="/reservas">Cancelar</a>
+  </div>
+</form>

@@ -1,0 +1,17 @@
+{
+  "name": "tp-05-salas-middleware",
+  "version": "1.0.0",
+  "description": "Reservas temporales de salas de estudio con un pipeline de middleware Express",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node --check src/index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.22.1",
+    "express-ejs-layouts": "^2.5.1",
+    "morgan": "^1.10.0"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#153b4a">
+  <title><%= titulo %></title>
+  <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+  <header class="encabezado">
+    <div class="contenedor barra">
+      <a class="marca" href="/">Aula Abierta</a>
+      <nav aria-label="Navegación principal">
+        <a href="/">Inicio</a>
+        <a href="/reservas">Reservas</a>
+        <a href="/reservas/nueva">Reservar sala</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor contenido">
+    <%- body %>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie-interior">
+      <span>Reservas de salas de estudio</span>
+      <small>Solicitud <%= solicitudId %></small>
+    </div>
+  </footer>
+</body>
+</html>
