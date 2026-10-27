@@ -1,0 +1,26 @@
+{
+  "name": "tp-09-salas-crud-mongodb",
+  "version": "1.0.0",
+  "description": "CRUD de reservas de salas con vistas HTML, API JSON y persistencia MongoDB",
+  "main": "src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node --env-file=.env src/index.js",
+    "format": "npx prettier --write \"src/**/*.js\" \"tests/**/*.js\"",
+    "test": "node --test",
+    "check": "node --check src/index.js && node --check src/config/database.js && node --check src/modelos/reserva.js && node --check src/servicios/reservas.js && node --check src/controladores/html.js && node --check src/controladores/api.js && node --check src/rutas/html.js && node --check src/rutas/api.js && node --check src/middleware/validar-reserva.js && node --check src/middleware/errores.js && node --check tests/controladores-api.test.js && node --check tests/validar-reserva.test.js && node --check tests/servicios.test.js && node --test"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^8.19.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}
